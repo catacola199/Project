@@ -7,7 +7,7 @@
     android:background="@drawable/main_bk"
     android:layout_height="match_parent"
     tools:context=".MainMenu">
-
+<!--    lalal-->
         <TextView
             android:id="@+id/tulisan"
             android:layout_width="match_parent"
