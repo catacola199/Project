@@ -5,7 +5,7 @@
         android:duration="6000"/>
 
     <item
-        android:drawable="@drawable/gradient1"
+        android:drawable="@drawable/bck"
         android:duration="6000"/>
 
     <item
