@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var reference: DatabaseReference
     private var USERNAME_KEY = "username_key"
     private var username_key = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -98,4 +99,7 @@ class MainActivity : AppCompatActivity() {
             }
         })
     }
+
+
+
 }

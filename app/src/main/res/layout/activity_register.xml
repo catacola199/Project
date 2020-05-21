@@ -86,4 +86,13 @@
         android:text="@string/login_signup_hint"
         android:layout_marginTop="@dimen/loginViewsMargin"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:fontFamily="@font/freelancer"
+        android:layout_height="wrap_content"
+        android:text="Kodegiri"
+        android:layout_marginTop="20dp"
+        android:textSize="60dp"
+        />
+
 </LinearLayout>

@@ -1,18 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="codenetic.kodegiri.coba3" >
+    package="codenetic.kodegiri.coba3">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:hardwareAccelerated="false"
+        android:icon="@drawable/logo1"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" >
-        <activity android:name=".MainMenu" >
-        </activity>
+        android:theme="@style/Tem">
+        <activity android:name=".main.transaction"></activity>
+        <activity android:name=".main.Detail" />
+        <activity
+            android:name=".main.information"
+            android:theme="@style/Tem" />
+        <activity
+            android:name=".main.elearning"
+            android:parentActivityName=".MainMenu" />
+        <activity
+            android:name=".main.salesman_bulletin"
+            android:parentActivityName=".MainMenu" />
+        <activity
+            android:name=".main.quick_guide"
+            android:parentActivityName=".MainMenu" />
+        <activity
+            android:name=".main.catalog"
+            android:parentActivityName=".MainMenu" />
+        <activity
+            android:name=".main.transaksi"
+            android:parentActivityName=".MainMenu" />
+        <activity
+            android:name=".main.training_material"
+            android:parentActivityName=".MainMenu" />
+        <activity
+            android:name=".MainMenu"
+            android:theme="@style/AppTheme" />
         <activity android:name=".register" />
-        <activity android:name=".MainActivity" >
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
