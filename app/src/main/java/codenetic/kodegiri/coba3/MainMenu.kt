@@ -3,6 +3,8 @@ package codenetic.kodegiri.coba3
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.ContactsContract
+import android.widget.Button
 import androidx.cardview.widget.CardView
 
 
@@ -16,10 +18,11 @@ class MainMenu : AppCompatActivity() {
     private lateinit var cardsalesbul   : CardView
     private lateinit var cardinformation   : CardView
     private lateinit var cardquick   : CardView
+    private lateinit var btn_profile : Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_menu)
-
+        btn_profile = findViewById(R.id.img_profile)
         cardtm = findViewById(R.id.training_material)
         cardelearning = findViewById(R.id.elearning)
         cardcatalog = findViewById(R.id.catalog)
@@ -49,7 +52,7 @@ class MainMenu : AppCompatActivity() {
             startActivity(intent)
         }
         cardelearning.setOnClickListener{
-            val intent = Intent (this, codenetic.kodegiri.coba3.main.elearning::class.java)
+            val intent = Intent (this, codenetic.kodegiri.coba3.main.Elearning_Act::class.java)
             startActivity(intent)
         }
         cardcatalog.setOnClickListener{
@@ -60,6 +63,11 @@ class MainMenu : AppCompatActivity() {
 
             val intent_signout = Intent(this, MainActivity::class.java)
             startActivity(intent_signout)
+            finish()
+        }
+        btn_profile.setOnClickListener{
+            val intent = Intent(this, codenetic.kodegiri.coba3.main.Profile::class.java)
+            startActivity(intent)
             finish()
         }
     }

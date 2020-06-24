@@ -26,7 +26,7 @@ class AdapterSales(val listsales: ArrayList<SalesBulletin_isi>) : RecyclerView.A
         holder.url_pdf.text = cata.url_pdf
         holder.itemView.setOnClickListener(View.OnClickListener {
             val context : Context = holder.itemView.context
-            val Salesman_PDF_ViewerIntent = Intent(context, Salesman_PDF_Viewer::class.java)
+            val Salesman_PDF_ViewerIntent = Intent(context, Dicoba::class.java)
             Salesman_PDF_ViewerIntent.putExtra("url_pdf", cata.url_pdf)
             context.startActivity(Salesman_PDF_ViewerIntent)
         })

@@ -4,20 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_constraintEnd_toStartOf="parent"
     app:layout_constraintStart_toEndOf="parent"
-    tools:context=".Dicoba">
+    app:layout_constraintEnd_toStartOf="parent"
+    tools:context=".main.Dicoba">
 
     <com.github.barteksc.pdfviewer.PDFView
-        android:id="@+id/mypdf"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/pdf_view" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/TittlePdf"
-        android:visibility="invisible"/>
+        android:visibility="invisible"
+        android:id="@+id/Tittle_PDF"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,6 +3,7 @@
     package="codenetic.kodegiri.coba3">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,7 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Tem">
-        <activity android:name=".Dicoba"></activity>
+        <activity android:name=".main.Elearning_Act"></activity>
+        <activity android:name=".main.Splash" />
+        <activity android:name=".main.Dicoba" />
         <activity android:name=".main.Salesman_PDF_Viewer" />
         <activity android:name=".main.Edt_Profile" />
         <activity android:name=".main.Profile" />
