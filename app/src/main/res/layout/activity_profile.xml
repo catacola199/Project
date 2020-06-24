@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".main.Profile">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_constraintStart_toEndOf="parent"
+    app:layout_constraintEnd_toStartOf="parent"
+    android:background="#75b79e"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/myPict"
+            android:layout_marginTop="20dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:src="@drawable/logo2"/>
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_marginTop="7dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:textAlignment="center"
+            android:textColor="#eef9bf"
+            android:textSize="20dp"
+            android:text="Delviro"/>
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textColor="#eef9bf"
+            android:layout_marginBottom="15dp"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:text="Yogyakarta"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/profile"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:layout_width="300dp"
+            android:background="@color/white"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:hint="Username"
+            app:hintTextAppearance="@style/TextInputLayoutHintText">
+            <EditText
+                android:id="@+id/view_username"
+                android:layout_width="300dp"
+                android:layout_height="60dp"
+                android:text="deira1312"
+                android:textColor="#6a8caf"
+                android:textSize="18dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:layout_width="300dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:background="@color/white"
+            android:hint="Email"
+            app:hintTextAppearance="@style/TextInputLayoutHintText">
+            <EditText
+                android:id="@+id/view_email"
+                android:layout_width="300dp"
+                android:textColor="#6a8caf"
+                android:layout_height="60dp"
+                android:textSize="18dp"
+                android:text="delvirovio@gmail.com" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:layout_width="300dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:background="@color/white"
+            android:hint="Phone"
+            app:hintTextAppearance="@style/TextInputLayoutHintText">
+            <EditText
+                android:id="@+id/view_Phone"
+                android:layout_width="300dp"
+                android:layout_height="60dp"
+                android:textColor="#6a8caf"
+                android:textSize="18dp"
+                android:text="081213561966" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:layout_width="300dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:background="@color/white"
+            android:hint="Gender"
+            app:hintTextAppearance="@style/TextInputLayoutHintText">
+            <EditText
+                android:id="@+id/view_Gender"
+                android:layout_width="300dp"
+                android:layout_height="60dp"
+                android:textSize="18dp"
+                android:textColor="#6a8caf"
+                android:text="Laki - Laki " />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:layout_width="200dp"
+            android:layout_marginTop="20dp"
+            android:id="@+id/btn_edt_profile"
+            android:layout_height="wrap_content"
+            android:background="@drawable/login_button_bk"
+            android:text="Edit Profile"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+</LinearLayout>
+    <Button
+        android:id="@+id/btn_back_home"
+        android:layout_width="32dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

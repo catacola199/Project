@@ -15,7 +15,7 @@
         android:layout_height="80dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:src="@drawable/tm" />
+        android:src="@drawable/training_material" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

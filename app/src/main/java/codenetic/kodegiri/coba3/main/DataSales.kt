@@ -46,11 +46,9 @@ object DataSales {
             val list = arrayListOf<SalesBulletin_isi>()
             for (position in Name.indices) {
                 val sb = SalesBulletin_isi()
-                sb.name = Name[position]
-                sb.series = series[position]
-                sb.viiew = views[position]
-                sb.date = date[position]
-                sb.photo = Image[position]
+                sb.Title = Name[position]
+                sb.Series = series[position]
+                sb.datetime = date[position]
                 list.add(sb)
             }
             return list

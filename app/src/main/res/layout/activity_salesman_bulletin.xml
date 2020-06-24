@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    app:layout_constraintEnd_toStartOf="parent"
+    app:layout_constraintStart_toEndOf="parent"
     tools:context=".main.salesman_bulletin">
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
@@ -12,4 +14,16 @@
         tools:listitem="@layout/item_row_salesman">
 
     </androidx.recyclerview.widget.RecyclerView>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/button_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+
+        android:foregroundGravity="bottom"
+        android:src="@drawable/ic_add"
+        tools:ignore="MissingConstraints"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+         />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,7 @@
 package codenetic.kodegiri.coba3.main
 
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,16 +19,17 @@ class AdapterSales(val listsales: ArrayList<SalesBulletin_isi>) : RecyclerView.A
     }
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         val cata = listsales[position]
-        Glide.with(holder.itemView.context)
-            .load(cata.photo)
-            .apply(RequestOptions().override(55, 55))
-            .into(holder.imgPhoto)
-        holder.tvName.text = cata.name
-        holder.tvSeri.text = cata.series
-        holder.tvDate.text = cata.date
-        holder.tvViews.text = cata.viiew
 
-
+        holder.tvName.text = cata.Title
+        holder.tvSeri.text = cata.Series
+        holder.tvDate.text = cata.datetime
+        holder.url_pdf.text = cata.url_pdf
+        holder.itemView.setOnClickListener(View.OnClickListener {
+            val context : Context = holder.itemView.context
+            val Salesman_PDF_ViewerIntent = Intent(context, Salesman_PDF_Viewer::class.java)
+            Salesman_PDF_ViewerIntent.putExtra("url_pdf", cata.url_pdf)
+            context.startActivity(Salesman_PDF_ViewerIntent)
+        })
     }
 
     override fun getItemCount(): Int {
@@ -37,8 +40,10 @@ class AdapterSales(val listsales: ArrayList<SalesBulletin_isi>) : RecyclerView.A
         var tvName: TextView = itemView.findViewById(R.id.tv_item_name)
         var tvSeri: TextView = itemView.findViewById(R.id.seri)
         var tvDate: TextView = itemView.findViewById(R.id.date)
-        var tvViews: TextView = itemView.findViewById(R.id.view)
-        var imgPhoto: ImageView = itemView.findViewById(R.id.img_item_photo)
+        var url_pdf: TextView = itemView.findViewById(R.id.view)
     }
-
+    fun deleteItem(pos:Int){
+        listsales.removeAt(pos)
+        notifyItemRemoved(pos)
+    }
 }

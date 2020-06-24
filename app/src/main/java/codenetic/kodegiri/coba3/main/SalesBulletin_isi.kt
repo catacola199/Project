@@ -1,10 +1,10 @@
 package codenetic.kodegiri.coba3.main
 
 class SalesBulletin_isi (
-    var name: String = "",
-    var series: String = "",
-    var viiew: String = "",
-    var date: String = "",
-    var photo: Int = 0
+    var Title: String = "",
+    var Series: String = "",
+    var datetime: String ="",
+    var url_pdf : String =""
+
 )
 

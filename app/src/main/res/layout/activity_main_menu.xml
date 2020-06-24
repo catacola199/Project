@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/main_bk"
+    android:background="@drawable/main_background"
+    app:layout_constraintEnd_toStartOf="parent"
+    app:layout_constraintStart_toEndOf="parent"
     android:layout_height="match_parent"
     tools:context=".MainMenu">
         <LinearLayout
@@ -29,7 +31,7 @@
                 android:layout_below="@id/tulisan"
                 android:layout_marginLeft="80dp"
                 android:layout_marginTop="5dp"
-                android:src="@drawable/undraw_code_review_l1q9"
+                android:src="@drawable/main_logo"
                 tools:ignore="MissingConstraints"
                 tools:layout_editor_absoluteX="100dp"
                 tools:layout_editor_absoluteY="6dp" />
@@ -57,7 +59,7 @@
                             android:layout_width="100dp"
                             android:layout_height="90dp"
                             android:padding="10dp"
-                            android:src="@drawable/tm" />
+                            android:src="@drawable/training_material" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -83,7 +85,7 @@
                             android:layout_width="100dp"
                             android:layout_height="90dp"
                             android:padding="10dp"
-                            android:src="@drawable/qg" />
+                            android:src="@drawable/quick_guide" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -110,7 +112,7 @@
                             android:layout_width="100dp"
                             android:layout_height="90dp"
                             android:padding="10dp"
-                            android:src="@drawable/sb" />
+                            android:src="@drawable/salesman_bulletin" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -171,7 +173,7 @@
                             android:layout_width="100dp"
                             android:layout_height="90dp"
                             android:padding="10dp"
-                            android:src="@drawable/tm1" />
+                            android:src="@drawable/catalog" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -198,7 +200,7 @@
                             android:layout_width="100dp"
                             android:layout_height="90dp"
                             android:padding="10dp"
-                            android:src="@drawable/ot" />
+                            android:src="@drawable/transaction" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -268,29 +270,6 @@
                             android:layout_gravity="center"
                             android:text="Log Out"
                             android:textSize="15sp" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView
-                    android:layout_width="110dp"
-                    android:layout_height="140dp"
-                    android:layout_margin="5dp">
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:layout_height="match_parent">
-
-                        <ImageView
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:padding="10dp"
-                            android:src="@drawable/dekstop" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="abcasd"
-                            android:textSize="20sp" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
