@@ -13,7 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Tem">
-        <activity android:name=".main.Elearning_Act"></activity>
+        <activity android:name=".main.Training_Material_Tambah"></activity>
+        <activity android:name=".main.Quick_guide_Tambah" />
+        <activity android:name=".main.Profile_edt" />
+        <activity android:name=".main.Elearning_Act" />
         <activity android:name=".main.Splash" />
         <activity android:name=".main.Dicoba" />
         <activity android:name=".main.Salesman_PDF_Viewer" />

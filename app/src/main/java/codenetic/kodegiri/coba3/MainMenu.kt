@@ -1,11 +1,17 @@
 package codenetic.kodegiri.coba3
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.ContactsContract
 import android.widget.Button
+import android.widget.ImageButton
+import android.widget.TextView
 import androidx.cardview.widget.CardView
+import codenetic.kodegiri.coba3.main.SharedPreference
+import kotlinx.android.synthetic.main.activity_main_menu.*
 
 
 class MainMenu : AppCompatActivity() {
@@ -18,10 +24,17 @@ class MainMenu : AppCompatActivity() {
     private lateinit var cardsalesbul   : CardView
     private lateinit var cardinformation   : CardView
     private lateinit var cardquick   : CardView
-    private lateinit var btn_profile : Button
+    private lateinit var user   : TextView
+    private lateinit var btn_profile : ImageButton
+    private lateinit var sharedPreference :SharedPreference
+    private var USERNAME_KEY = "username_key"
+    private var username_key = ""
+    private var username_key_new = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_menu)
+        val sharedPreference: SharedPreferences = getSharedPreferences(USERNAME_KEY, Context.MODE_PRIVATE)
         btn_profile = findViewById(R.id.img_profile)
         cardtm = findViewById(R.id.training_material)
         cardelearning = findViewById(R.id.elearning)
@@ -31,6 +44,8 @@ class MainMenu : AppCompatActivity() {
         cardsalesbul = findViewById(R.id.salesman)
         cardinformation = findViewById(R.id.information)
         cardquick = findViewById(R.id.quick_guide)
+
+        getUsernameLocal()
         cardquick.setOnClickListener{
             val intent = Intent (this, codenetic.kodegiri.coba3.main.quick_guide::class.java)
             startActivity(intent)
@@ -74,5 +89,8 @@ class MainMenu : AppCompatActivity() {
     override fun onBackPressed(){
 
     }
-
+    fun getUsernameLocal(){
+        val sharedPreference: SharedPreferences = getSharedPreferences(USERNAME_KEY, Context.MODE_PRIVATE)
+        username_key_new = sharedPreference.getString(username_key, "").toString()
+    }
 }

@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import codenetic.kodegiri.coba3.main.SharedPreference
 import com.google.firebase.database.*
 
 class MainActivity : AppCompatActivity() {
@@ -17,6 +18,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var email      : EditText
     private lateinit var password   : EditText
     private lateinit var btncreate  : TextView
+    private lateinit var sharedPreference :SharedPreference
     private lateinit var reference: DatabaseReference
     private var USERNAME_KEY = "username_key"
     private var username_key = ""
@@ -70,6 +72,7 @@ class MainActivity : AppCompatActivity() {
 
                                     //sharedPReference Username to local
                                     //menyimpan kepada lokal storage/smartphone
+
                                     val sharedPreferences: SharedPreferences = getSharedPreferences(USERNAME_KEY, Context.MODE_PRIVATE)
                                     val editor: SharedPreferences.Editor = sharedPreferences.edit()
                                     editor.putString(username_key, dUsername).apply()

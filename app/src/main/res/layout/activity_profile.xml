@@ -27,6 +27,7 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:textStyle="bold"
+            android:id="@+id/view_name1"
             android:layout_marginTop="7dp"
             android:layout_gravity="center"
             android:layout_marginBottom="5dp"
@@ -41,6 +42,7 @@
             android:textStyle="bold"
             android:textColor="#eef9bf"
             android:layout_marginBottom="15dp"
+            android:id="@+id/view_from1"
             android:textAlignment="center"
             android:textSize="20dp"
             android:text="Yogyakarta"/>
@@ -51,6 +53,7 @@
         android:background="@drawable/profile"
         android:orientation="vertical">
 
+
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
             android:layout_width="300dp"
@@ -58,11 +61,13 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
+            android:focusable="false"
             android:hint="Username"
             app:hintTextAppearance="@style/TextInputLayoutHintText">
-            <EditText
-                android:id="@+id/view_username"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/view_username1"
                 android:layout_width="300dp"
+                android:editable="false"
                 android:layout_height="60dp"
                 android:text="deira1312"
                 android:textColor="#6a8caf"
@@ -76,11 +81,13 @@
             android:layout_height="80dp"
             android:layout_gravity="center"
             android:background="@color/white"
+            android:focusable="false"
             android:hint="Email"
             app:hintTextAppearance="@style/TextInputLayoutHintText">
-            <EditText
-                android:id="@+id/view_email"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/view_email1"
                 android:layout_width="300dp"
+                android:editable="false"
                 android:textColor="#6a8caf"
                 android:layout_height="60dp"
                 android:textSize="18dp"
@@ -91,12 +98,14 @@
             android:layout_width="300dp"
             android:layout_height="80dp"
             android:layout_gravity="center"
+            android:focusable="false"
             android:background="@color/white"
             android:hint="Phone"
             app:hintTextAppearance="@style/TextInputLayoutHintText">
-            <EditText
-                android:id="@+id/view_Phone"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/view_Phone1"
                 android:layout_width="300dp"
+                android:editable="false"
                 android:layout_height="60dp"
                 android:textColor="#6a8caf"
                 android:textSize="18dp"
@@ -106,12 +115,14 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
             android:layout_width="300dp"
             android:layout_height="80dp"
+            android:focusable="false"
             android:layout_gravity="center"
             android:background="@color/white"
             android:hint="Gender"
             app:hintTextAppearance="@style/TextInputLayoutHintText">
-            <EditText
-                android:id="@+id/view_Gender"
+            <com.google.android.material.textfield.TextInputEditText
+                android:editable="false"
+                android:id="@+id/view_Gender1"
                 android:layout_width="300dp"
                 android:layout_height="60dp"
                 android:textSize="18dp"
