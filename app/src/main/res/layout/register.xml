@@ -96,11 +96,13 @@
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/textInputPassword"
                     style="@style/parent"
+                    app:passwordToggleEnabled="true"
                     android:layout_marginTop="@dimen/loginViewsMargin">
 
                     <EditText
                         android:id="@+id/editTextPassword"
                         style="@style/modifiedEditText"
+
                         android:hint="@string/login_password_hint"
                         android:inputType="textPassword" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -116,6 +118,17 @@
                         android:hint="@string/login_name_hint"
                         android:inputType="textPersonName" />
                 </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputRole"
+                style="@style/parent"
+                android:layout_marginTop="@dimen/loginViewsMargin">
+
+                <EditText
+                    android:id="@+id/editTextRole"
+                    style="@style/modifiedEditText"
+                    android:hint="Role (Admin/Member)"
+                    android:inputType="textPersonName" />
+            </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/textFrom"
@@ -137,7 +150,7 @@
                     <EditText
                         android:id="@+id/editTextGender"
                         style="@style/modifiedEditText"
-                        android:hint="Gender"
+                        android:hint="Gender (Male/Female)"
                         android:inputType="textPersonName" />
                 </com.google.android.material.textfield.TextInputLayout>
 

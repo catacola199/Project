@@ -95,7 +95,6 @@ class Edt_Profile : AppCompatActivity() {
                     dataSnapshot.ref.child("From").setValue(from.text.toString())
                     dataSnapshot.ref.child("Gender").setValue(gender.text.toString())
                     dataSnapshot.ref.child("Phone").setValue(phone.text.toString())
-
                 }
 
                 override fun onCancelled(databaseError: DatabaseError) {
@@ -103,25 +102,6 @@ class Edt_Profile : AppCompatActivity() {
                 }
             })
 
-            if(photo_location != null){
-                val mStorageReference: StorageReference = storage.child( System.currentTimeMillis().toString() + "." + getFileExtension(photo_location))
-
-                mStorageReference.putFile(photo_location)
-                    .addOnFailureListener {
-                        //failure upload
-                    }
-                    .addOnSuccessListener {
-
-                        mStorageReference.downloadUrl.addOnSuccessListener { uri ->
-                            //Toast.makeText(this, "URL : $uri", Toast.LENGTH_LONG).show()
-
-                            reference.ref.child("url_photo_profile").setValue(uri.toString())
-                        }
-                    }.addOnCompleteListener {
-                        val gotoprofile= Intent(this,Profile::class.java)
-                        startActivity(gotoprofile)
-                    }
-            }
         }
 
 
@@ -151,37 +131,9 @@ class Edt_Profile : AppCompatActivity() {
 
             }
         })
-        btn_edit_profile.setOnClickListener{
-            findPhoto()
-        }
-    }
-    fun findPhoto(){
-        val pictureIntent = Intent()
-        pictureIntent.setType("image/*")
-        pictureIntent.setAction(Intent.ACTION_GET_CONTENT)
-        startActivityForResult(pictureIntent, PHOTO_MAX)
+
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-
-        if(requestCode == PHOTO_MAX && resultCode == Activity.RESULT_OK && data != null && data.data != null){
-
-            photo_location = data.data!!
-            Picasso.get()
-                .load(photo_location)
-                .centerCrop()
-                .fit()
-                .into(photo_profile)
-
-        }
-    }
-
-    fun getFileExtension(uri: Uri): String? {
-        val contentResolver: ContentResolver = contentResolver
-        val mimeTypeMap: MimeTypeMap = MimeTypeMap.getSingleton()
-        return mimeTypeMap.getExtensionFromMimeType(contentResolver.getType(uri))
-    }
 
     fun getUsernameLocal(){
         val sharedPreference: SharedPreferences = getSharedPreferences(USERNAME_KEY, Context.MODE_PRIVATE)

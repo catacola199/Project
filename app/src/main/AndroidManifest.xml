@@ -9,7 +9,7 @@
         android:allowBackup="true"
         android:hardwareAccelerated="false"
         android:icon="@drawable/logo1"
-        android:label="@string/app_name"
+        android:label="Kodegiri"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Tem">

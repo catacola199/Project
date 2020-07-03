@@ -46,6 +46,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputPassword"
             style="@style/parent"
+            app:passwordToggleEnabled="true"
             android:layout_marginTop="@dimen/loginViewsMargin">
 
             <EditText
@@ -63,15 +64,6 @@
             android:layout_gravity="right"
             android:layout_marginTop="@dimen/loginViewsMargin"
             android:text="Login" />
-
-        <TextView
-            android:id="@+id/createaccount"
-            style="@style/parent"
-            android:layout_marginTop="@dimen/loginViewsMargin"
-            android:text="@string/login_signup_hint"
-            android:textAlignment="textEnd"
-            android:textColor="@color/black"
-            android:textStyle="bold" />
 
     </LinearLayout>
 

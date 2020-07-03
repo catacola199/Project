@@ -1,8 +1,12 @@
 package codenetic.kodegiri.coba3.main
 
+import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -17,12 +21,19 @@ class quick_guide : AppCompatActivity() {
     private lateinit var reference: DatabaseReference
     private lateinit var adapterquick_guide : Quick_guide_Adapter
     private lateinit var FAB : FloatingActionButton
+    private var USERNAME_KEY = "username_key"
+    private var username_key = ""
+    private var username_key_new = ""
+    private var role = "Admin"
+    @SuppressLint("RestrictedApi")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quick_guide)
         supportActionBar?.title = "Quick Guide"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         FAB = findViewById(R.id.button_note)
+
+        getUsernameLocal()
         FAB.setOnClickListener{view ->
             val intent = Intent (this, codenetic.kodegiri.coba3.main.Quick_guide_Tambah::class.java)
             startActivity(intent)
@@ -50,5 +61,31 @@ class quick_guide : AppCompatActivity() {
     }
     override fun onBackPressed(){
 
+    }
+    fun getUsernameLocal(){
+        val sharedPreference: SharedPreferences = getSharedPreferences(USERNAME_KEY, Context.MODE_PRIVATE)
+        username_key_new = sharedPreference.getString(username_key, "").toString()
+        reference = FirebaseDatabase.getInstance()
+            .reference
+            .child("Users")
+            .child(username_key_new)
+
+        reference.addValueEventListener(object: ValueEventListener {
+            @SuppressLint("RestrictedApi")
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                val rolefromfirebase: String = dataSnapshot.child("Role").value.toString()
+                if(role == rolefromfirebase){
+                    FAB.visibility = View.VISIBLE
+
+                } else {
+                    FAB.visibility = View.GONE
+                }
+
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {
+
+            }
+        })
     }
 }

@@ -6,11 +6,16 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.ContactsContract
+import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
 import androidx.cardview.widget.CardView
 import codenetic.kodegiri.coba3.main.SharedPreference
+import com.google.firebase.database.*
+import com.google.firebase.storage.FirebaseStorage
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_main_menu.*
 
 
@@ -23,18 +28,18 @@ class MainMenu : AppCompatActivity() {
     private lateinit var cardtransaction   : CardView
     private lateinit var cardsalesbul   : CardView
     private lateinit var cardinformation   : CardView
+    private lateinit var cardregis   : CardView
     private lateinit var cardquick   : CardView
-    private lateinit var user   : TextView
     private lateinit var btn_profile : ImageButton
-    private lateinit var sharedPreference :SharedPreference
     private var USERNAME_KEY = "username_key"
     private var username_key = ""
     private var username_key_new = ""
+    private var role = "Admin"
+    private lateinit var reference : DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_menu)
-        val sharedPreference: SharedPreferences = getSharedPreferences(USERNAME_KEY, Context.MODE_PRIVATE)
         btn_profile = findViewById(R.id.img_profile)
         cardtm = findViewById(R.id.training_material)
         cardelearning = findViewById(R.id.elearning)
@@ -42,10 +47,15 @@ class MainMenu : AppCompatActivity() {
         cardlogout = findViewById(R.id.logout)
         cardtransaction = findViewById(R.id.transaction)
         cardsalesbul = findViewById(R.id.salesman)
+        cardregis = findViewById(R.id.register)
         cardinformation = findViewById(R.id.information)
         cardquick = findViewById(R.id.quick_guide)
 
         getUsernameLocal()
+        cardregis.setOnClickListener{
+            val intent = Intent (this, codenetic.kodegiri.coba3.main.quick_guide::class.java)
+            startActivity(intent)
+        }
         cardquick.setOnClickListener{
             val intent = Intent (this, codenetic.kodegiri.coba3.main.quick_guide::class.java)
             startActivity(intent)
@@ -92,5 +102,26 @@ class MainMenu : AppCompatActivity() {
     fun getUsernameLocal(){
         val sharedPreference: SharedPreferences = getSharedPreferences(USERNAME_KEY, Context.MODE_PRIVATE)
         username_key_new = sharedPreference.getString(username_key, "").toString()
+        reference = FirebaseDatabase.getInstance()
+            .reference
+            .child("Users")
+            .child(username_key_new)
+
+        reference.addValueEventListener(object: ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                val rolefromfirebase: String = dataSnapshot.child("Role").value.toString()
+                if(role == rolefromfirebase){
+                    cardregis.visibility = View.VISIBLE
+
+                } else {
+                    cardregis.visibility = View.GONE
+                }
+
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {
+
+            }
+        })
     }
 }

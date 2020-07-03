@@ -27,6 +27,7 @@ class register : AppCompatActivity() {
     private lateinit var edtUsername: EditText
     private lateinit var edtGender: EditText
     private lateinit var edtFrom: EditText
+    private lateinit var edtRole: EditText
     private lateinit var storage: StorageReference
     private lateinit var btn_add_new_photo : Button
     private lateinit var photo_location: Uri
@@ -47,6 +48,7 @@ class register : AppCompatActivity() {
         //casting EditText
         btn_add_new_photo = findViewById(R.id.btn_add_new_photo)
         edtFrom = findViewById(R.id.editTextFrom)
+        edtRole = findViewById(R.id.editTextRole)
         photo_profile = findViewById(R.id.photo_edit_profile)
         edtGender = findViewById(R.id.editTextGender)
         edtEmail = findViewById(R.id.editTextEmail)
@@ -61,9 +63,7 @@ class register : AppCompatActivity() {
         btnContinue.setOnClickListener(View.OnClickListener {
 
             //menyimpan kepada lokal storage/smartphone
-            val sharedPreferences: SharedPreferences = getSharedPreferences(USERNAME_KEY, Context.MODE_PRIVATE)
-            val editor: SharedPreferences.Editor = sharedPreferences.edit()
-            editor.putString(username_key, edtUsername.text.toString()).apply()
+
 
             //menyimpan ke firebase database
             reference = FirebaseDatabase
@@ -90,10 +90,12 @@ class register : AppCompatActivity() {
                             reference.ref.child("Username").setValue(edtUsername.text.toString())
                             reference.ref.child("password").setValue(edtPassword.text.toString())
                             reference.ref.child("Name").setValue(edtnama.text.toString())
+                            reference.ref.child("Role").setValue(edtRole.text.toString())
                             reference.ref.child("Email").setValue(edtEmail.text.toString())
                             reference.ref.child("From").setValue(edtFrom.text.toString())
                             reference.ref.child("Gender").setValue(edtGender.text.toString())
                             reference.ref.child("Phone").setValue(edtnumbermobile.text.toString())
+                            reference.ref.child("Role").setValue(edtRole.text.toString())
                             reference.ref.child("url_photo_profile").setValue(uri.toString())
                         }
                     }.addOnCompleteListener {

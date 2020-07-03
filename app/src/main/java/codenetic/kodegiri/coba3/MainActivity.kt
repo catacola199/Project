@@ -17,7 +17,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnlogin   : Button
     private lateinit var email      : EditText
     private lateinit var password   : EditText
-    private lateinit var btncreate  : TextView
     private lateinit var sharedPreference :SharedPreference
     private lateinit var reference: DatabaseReference
     private var USERNAME_KEY = "username_key"
@@ -30,12 +29,7 @@ class MainActivity : AppCompatActivity() {
         btnlogin    = findViewById(R.id.btn_login)
         email       = findViewById(R.id.editTextEmail)
         password    = findViewById(R.id.editTextPassword)
-        btncreate   = findViewById(R.id.createaccount)
-
-        btncreate.setOnClickListener({
-            intent = Intent(this, register::class.java)
-            startActivity(intent)
-        })
+        
         btnlogin.setOnClickListener({
             // ubah state menjadi loading
             btnlogin.isEnabled = false
