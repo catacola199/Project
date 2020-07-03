@@ -20,7 +20,7 @@ class quick_guide : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quick_guide)
-        supportActionBar?.title = "Catalog Apps"
+        supportActionBar?.title = "Quick Guide"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         FAB = findViewById(R.id.button_note)
         FAB.setOnClickListener{view ->

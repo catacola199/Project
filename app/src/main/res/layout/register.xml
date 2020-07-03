@@ -174,13 +174,6 @@
                     android:layout_marginTop="@dimen/loginViewsMargin"
                     android:text="Signup" />
 
-                <TextView
-                    style="@style/parent"
-                    android:layout_marginTop="@dimen/loginViewsMargin"
-                    android:text="Do you have account ? Sign In"
-                    android:textAlignment="textEnd"
-                    android:textColor="@color/colorPrimary"
-                    android:textStyle="bold" />
 
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -47,6 +47,9 @@ public class transaction extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_transaction);
+        getSupportActionBar().setTitle("Transaction");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         item = findViewById(R.id.item_name);
         project = findViewById(R.id.project_name);
         email = findViewById(R.id.email_client);
@@ -59,6 +62,9 @@ public class transaction extends AppCompatActivity {
                 Manifest.permission.WRITE_EXTERNAL_STORAGE}, PackageManager.PERMISSION_GRANTED);
 
         createPDF();
+
+    }
+    public void onBackPressed(){
 
     }
     private void createPDF() {

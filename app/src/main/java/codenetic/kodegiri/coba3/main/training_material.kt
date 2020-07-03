@@ -20,7 +20,7 @@ class training_material : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_training_material)
-        supportActionBar?.title = "Catalog Apps"
+        supportActionBar?.title = "Training Material"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         FAB = findViewById(R.id.button_note)
         FAB.setOnClickListener{view ->

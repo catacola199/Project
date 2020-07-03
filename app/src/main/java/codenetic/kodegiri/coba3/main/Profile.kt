@@ -111,5 +111,7 @@ class Profile : AppCompatActivity() {
         val sharedPreference: SharedPreferences = getSharedPreferences(USERNAME_KEY, Context.MODE_PRIVATE)
         username_key_new = sharedPreference.getString(username_key, "").toString()
     }
+    override fun onBackPressed(){
 
+    }
 }

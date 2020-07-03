@@ -13,21 +13,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Tem">
-        <activity android:name=".main.Training_Material_Tambah"></activity>
-        <activity android:name=".main.Quick_guide_Tambah" />
-        <activity android:name=".main.Profile_edt" />
+        <activity android:name=".main.informasi_Tambah"
+            android:parentActivityName=".MainMenu"/>
+        <activity android:name=".main.informasi_Detail" />
+        <activity android:name=".main.Training_Material_Tambah"
+            android:parentActivityName=".MainMenu"/>
+        <activity android:name=".main.Quick_guide_Tambah"
+            android:parentActivityName=".MainMenu"/>
+
         <activity android:name=".main.Elearning_Act" />
         <activity android:name=".main.Splash" />
         <activity android:name=".main.Dicoba" />
         <activity android:name=".main.Salesman_PDF_Viewer" />
         <activity android:name=".main.Edt_Profile" />
         <activity android:name=".main.Profile" />
-        <activity android:name=".main.Salesman_Tambah" />
-        <activity android:name=".main.transaction" />
+        <activity android:name=".main.Salesman_Tambah"
+            android:parentActivityName=".MainMenu"/>
+        <activity android:name=".main.transaction"
+            android:parentActivityName=".MainMenu"/>
         <activity android:name=".main.Detail" />
         <activity
             android:name=".main.information"
-            android:theme="@style/Tem" />
+            android:theme="@style/Tem"
+            android:parentActivityName=".MainMenu"/>
         <activity
             android:name=".main.elearning"
             android:parentActivityName=".MainMenu" />
@@ -49,7 +57,8 @@
         <activity
             android:name=".MainMenu"
             android:theme="@style/AppTheme" />
-        <activity android:name=".register" />
+        <activity android:name=".register"
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme">
