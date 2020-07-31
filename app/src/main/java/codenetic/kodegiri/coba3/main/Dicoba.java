@@ -31,10 +31,13 @@ public class Dicoba extends AppCompatActivity {
         setContentView(R.layout.activity_dicoba);
         pdfView = findViewById(R.id.pdf_view);
         text1 = findViewById(R.id.Tittle_PDF);
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         String url = getIntent().getStringExtra("url_pdf");
         new RetrivePdfStream().execute(url);
 
+
+    }
+    public void onBackPressed(){
 
     }
     class RetrivePdfStream extends AsyncTask<String,Void, InputStream>{

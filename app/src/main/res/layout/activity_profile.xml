@@ -18,7 +18,7 @@
         android:orientation="vertical">
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/myPict"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_gravity="center"
@@ -47,6 +47,7 @@
             android:textSize="20dp"
             android:text="Yogyakarta"/>
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -55,89 +56,87 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            style="@style/parent"
             android:layout_width="300dp"
-            android:background="@color/white"
-            android:layout_height="wrap_content"
+            android:layout_height="80dp"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/white"
             android:focusable="false"
-            android:hint="Username"
+            android:hint="Email"
             app:hintTextAppearance="@style/TextInputLayoutHintText">
+
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/view_username1"
+                android:id="@+id/view_email1"
                 android:layout_width="300dp"
-                android:editable="false"
                 android:layout_height="60dp"
-                android:text="deira1312"
+                android:editable="false"
+                android:text="delvirovio@gmail.com"
+                android:textColor="#6a8caf"
+                android:textSize="18dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/parent"
+            android:layout_width="300dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:background="@color/white"
+            android:focusable="false"
+            android:hint="Role"
+            app:hintTextAppearance="@style/TextInputLayoutHintText">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/view_Role1"
+                android:layout_width="300dp"
+                android:layout_height="60dp"
+                android:editable="false"
+                android:text="Admin/Member "
+                android:textColor="#6a8caf"
+                android:textSize="18dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/parent"
+            android:layout_width="300dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:background="@color/white"
+            android:focusable="false"
+            android:hint="Phone"
+            app:hintTextAppearance="@style/TextInputLayoutHintText">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/view_Phone1"
+                android:layout_width="300dp"
+                android:layout_height="60dp"
+                android:editable="false"
+                android:text="081213561966"
+                android:textColor="#6a8caf"
+                android:textSize="18dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/parent"
+            android:layout_width="300dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:background="@color/white"
+            android:focusable="false"
+            android:hint="Gender"
+            app:hintTextAppearance="@style/TextInputLayoutHintText">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/view_Gender1"
+                android:layout_width="300dp"
+                android:layout_height="60dp"
+                android:editable="false"
+                android:text="Laki - Laki "
                 android:textColor="#6a8caf"
                 android:textSize="18dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-            android:layout_width="300dp"
-            android:layout_height="80dp"
-            android:layout_gravity="center"
-            android:background="@color/white"
-            android:focusable="false"
-            android:hint="Email"
-            app:hintTextAppearance="@style/TextInputLayoutHintText">
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/view_email1"
-                android:layout_width="300dp"
-                android:editable="false"
-                android:textColor="#6a8caf"
-                android:layout_height="60dp"
-                android:textSize="18dp"
-                android:text="delvirovio@gmail.com" />
-        </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-            android:layout_width="300dp"
-            android:layout_height="80dp"
-            android:layout_gravity="center"
-            android:focusable="false"
-            android:background="@color/white"
-            android:hint="Phone"
-            app:hintTextAppearance="@style/TextInputLayoutHintText">
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/view_Phone1"
-                android:layout_width="300dp"
-                android:editable="false"
-                android:layout_height="60dp"
-                android:textColor="#6a8caf"
-                android:textSize="18dp"
-                android:text="081213561966" />
-        </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-            android:layout_width="300dp"
-            android:layout_height="80dp"
-            android:focusable="false"
-            android:layout_gravity="center"
-            android:background="@color/white"
-            android:hint="Gender"
-            app:hintTextAppearance="@style/TextInputLayoutHintText">
-            <com.google.android.material.textfield.TextInputEditText
-                android:editable="false"
-                android:id="@+id/view_Gender1"
-                android:layout_width="300dp"
-                android:layout_height="60dp"
-                android:textSize="18dp"
-                android:textColor="#6a8caf"
-                android:text="Laki - Laki " />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <Button
-            android:layout_width="200dp"
-            android:layout_marginTop="20dp"
-            android:id="@+id/btn_edt_profile"
-            android:layout_height="wrap_content"
-            android:background="@drawable/login_button_bk"
-            android:text="Edit Profile"
-            android:layout_gravity="center"/>
     </LinearLayout>
 </LinearLayout>
     <Button
@@ -149,4 +148,28 @@
         android:background="@drawable/ic_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:layout_width="200dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/btn_logout1"
+        android:layout_height="wrap_content"
+        android:background="@drawable/login_button_bk"
+        android:text="Logout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center"/>
+    <Button
+        android:layout_width="200dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/btn_edt_profile"
+        android:layout_height="wrap_content"
+        android:background="@drawable/login_button_bk"
+        android:text="Edit Profile"
+        app:layout_constraintBottom_toBottomOf="@id/btn_logout"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        android:layout_marginBottom="70dp"
+        android:layout_gravity="center"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

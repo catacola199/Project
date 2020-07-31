@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:allowBackup="true"
@@ -13,29 +14,52 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Tem">
-        <activity android:name=".main.informasi_Tambah"
-            android:parentActivityName=".MainMenu"/>
+        <receiver android:name="com.allyants.notifyme.NotificationPublisher"></receiver>
+        <receiver android:name="com.allyants.notifyme.BootNotifyMe">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <category android:name="android.intent.category.HOME" />
+            </intent-filter>
+        </receiver>
+        <activity android:name=".main.Add_Client"></activity>
+        <activity android:name=".main.List_Of_Client" />
+        <activity
+            android:name=".Forgot_Password"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".main.info" />
+        <activity
+            android:name=".main.informasi_Tambah"
+            android:parentActivityName=".MainMenu" />
         <activity android:name=".main.informasi_Detail" />
-        <activity android:name=".main.Training_Material_Tambah"
-            android:parentActivityName=".MainMenu"/>
-        <activity android:name=".main.Quick_guide_Tambah"
-            android:parentActivityName=".MainMenu"/>
-
+        <activity
+            android:name=".main.Training_Material_Tambah"
+            android:parentActivityName=".MainMenu" />
+        <activity
+            android:name=".main.Quick_guide_Tambah"
+            android:parentActivityName=".MainMenu" />
         <activity android:name=".main.Elearning_Act" />
         <activity android:name=".main.Splash" />
-        <activity android:name=".main.Dicoba" />
+        <activity
+            android:name=".main.Dicoba"
+            android:parentActivityName=".main.Training_Material_Tambah" />
         <activity android:name=".main.Salesman_PDF_Viewer" />
-        <activity android:name=".main.Edt_Profile" />
-        <activity android:name=".main.Profile" />
-        <activity android:name=".main.Salesman_Tambah"
-            android:parentActivityName=".MainMenu"/>
-        <activity android:name=".main.transaction"
-            android:parentActivityName=".MainMenu"/>
+        <activity
+            android:name=".main.Edt_Profile"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".main.Profile"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".main.Salesman_Tambah"
+            android:parentActivityName=".MainMenu" />
+        <activity
+            android:name=".main.transaction"
+            android:parentActivityName=".MainMenu" />
         <activity android:name=".main.Detail" />
         <activity
             android:name=".main.information"
-            android:theme="@style/Tem"
-            android:parentActivityName=".MainMenu"/>
+            android:parentActivityName=".MainMenu"
+            android:theme="@style/Tem" />
         <activity
             android:name=".main.elearning"
             android:parentActivityName=".MainMenu" />
@@ -57,7 +81,8 @@
         <activity
             android:name=".MainMenu"
             android:theme="@style/AppTheme" />
-        <activity android:name=".register"
+        <activity
+            android:name=".register"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".MainActivity"

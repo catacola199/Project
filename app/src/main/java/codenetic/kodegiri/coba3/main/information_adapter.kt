@@ -23,6 +23,8 @@ class information_adapter (val listinformation: ArrayList<information_isi>) : Re
     inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var tvName: TextView = itemView.findViewById(R.id.item_Tittle)
         var tvIsi: TextView = itemView.findViewById(R.id.Item_Isi)
+        var tvTime: TextView = itemView.findViewById(R.id.Item_time)
+
     }
     fun deleteItem(pos:Int){
         listinformation.removeAt(pos)
@@ -34,11 +36,12 @@ class information_adapter (val listinformation: ArrayList<information_isi>) : Re
 
         holder.tvName.text = cata.Title
         holder.tvIsi.text = cata.Isi
+        holder.tvTime.text = cata.date
         holder.itemView.setOnClickListener(View.OnClickListener {
-            val moveToDetailActivity = Intent(it.context, informasi_Detail::class.java)
-            moveToDetailActivity.putExtra(informasi_Detail.EXTRA_NAME, cata.Title)
-            moveToDetailActivity.putExtra(informasi_Detail.EXTRA_DETAIL, cata.Isi)
-            it.context.startActivity(moveToDetailActivity)
+            val context : Context = holder.itemView.context
+            val TittleIntent = Intent(context, informasi_Detail::class.java)
+            TittleIntent.putExtra("Tittle", cata.Title)
+            context.startActivity(TittleIntent)
         })
     }
 }

@@ -12,13 +12,10 @@ import codenetic.kodegiri.coba3.R
 class Quick_guide_Adapter(val listsales: ArrayList<Quick_guide_isi>) : RecyclerView.Adapter<Quick_guide_Adapter.ListViewHolder>() {
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ListViewHolder {
         val view: View = LayoutInflater.from(viewGroup.context).inflate(R.layout.item_row_quick_guide, viewGroup, false)
-        return ListViewHolder(view)
-    }
-
+        return ListViewHolder(view) }
 
     override fun getItemCount(): Int {
-        return listsales.size
-    }
+        return listsales.size }
 
     inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var tvName: TextView = itemView.findViewById(R.id.tv_item_name)

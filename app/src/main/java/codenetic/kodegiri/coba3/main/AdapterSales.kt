@@ -5,14 +5,17 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.request.RequestOptions
 import codenetic.kodegiri.coba3.R
-import com.bumptech.glide.Glide
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+
 
 class AdapterSales(val listsales: ArrayList<SalesBulletin_isi>) : RecyclerView.Adapter<AdapterSales.ListViewHolder>() {
+    private var removedPosition: Int = 0
+    private var removedItem: String = ""
+    private lateinit var reference: DatabaseReference
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ListViewHolder {
         val view: View = LayoutInflater.from(viewGroup.context).inflate(R.layout.item_row_salesman, viewGroup, false)
         return ListViewHolder(view)
@@ -33,17 +36,17 @@ class AdapterSales(val listsales: ArrayList<SalesBulletin_isi>) : RecyclerView.A
     }
 
     override fun getItemCount(): Int {
-        return listsales.size
-    }
+        return listsales.size }
 
     inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var tvName: TextView = itemView.findViewById(R.id.tv_item_name)
-        var tvSeri: TextView = itemView.findViewById(R.id.seri)
-        var tvDate: TextView = itemView.findViewById(R.id.date)
-        var url_pdf: TextView = itemView.findViewById(R.id.view)
-    }
-    fun deleteItem(pos:Int){
-        listsales.removeAt(pos)
-        notifyItemRemoved(pos)
+        var tvName: TextView = itemView.findViewById(R.id.tv_item_nameS)
+        var tvSeri: TextView = itemView.findViewById(R.id.seriS)
+        var tvDate: TextView = itemView.findViewById(R.id.dateS)
+        var url_pdf: TextView = itemView.findViewById(R.id.viewS) }
+
+    fun removeItem(position: Int) {
+
+
     }
 }
+

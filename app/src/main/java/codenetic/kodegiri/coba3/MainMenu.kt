@@ -13,6 +13,8 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
 import codenetic.kodegiri.coba3.main.SharedPreference
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
 import com.google.firebase.storage.FirebaseStorage
 import com.squareup.picasso.Picasso
@@ -35,6 +37,7 @@ class MainMenu : AppCompatActivity() {
     private var username_key = ""
     private var username_key_new = ""
     private var role = "Admin"
+    private lateinit var Auth : FirebaseAuth
     private lateinit var reference : DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,6 +45,7 @@ class MainMenu : AppCompatActivity() {
         setContentView(R.layout.activity_main_menu)
         btn_profile = findViewById(R.id.img_profile)
         cardtm = findViewById(R.id.training_material)
+
         cardelearning = findViewById(R.id.elearning)
         cardcatalog = findViewById(R.id.catalog)
         cardlogout = findViewById(R.id.logout)
@@ -50,10 +54,13 @@ class MainMenu : AppCompatActivity() {
         cardregis = findViewById(R.id.register)
         cardinformation = findViewById(R.id.information)
         cardquick = findViewById(R.id.quick_guide)
-
+        Auth = FirebaseAuth.getInstance()
         getUsernameLocal()
+
+
+
         cardregis.setOnClickListener{
-            val intent = Intent (this, codenetic.kodegiri.coba3.main.quick_guide::class.java)
+            val intent = Intent (this, codenetic.kodegiri.coba3.register::class.java)
             startActivity(intent)
         }
         cardquick.setOnClickListener{
@@ -65,8 +72,7 @@ class MainMenu : AppCompatActivity() {
             startActivity(intent)
         }
         cardinformation.setOnClickListener{
-            val intent = Intent (this, codenetic.kodegiri.coba3.main.information::class.java)
-            startActivity(intent)
+
         }
         cardtransaction.setOnClickListener{
             val intent = Intent (this, codenetic.kodegiri.coba3.main.transaction::class.java)
@@ -86,9 +92,6 @@ class MainMenu : AppCompatActivity() {
         }
         cardlogout.setOnClickListener {
 
-            val intent_signout = Intent(this, MainActivity::class.java)
-            startActivity(intent_signout)
-            finish()
         }
         btn_profile.setOnClickListener{
             val intent = Intent(this, codenetic.kodegiri.coba3.main.Profile::class.java)
@@ -124,4 +127,5 @@ class MainMenu : AppCompatActivity() {
             }
         })
     }
+
 }

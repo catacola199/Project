@@ -12,6 +12,8 @@ import com.google.firebase.database.*
 import com.google.firebase.storage.StorageReference
 import java.text.DateFormat
 import java.text.SimpleDateFormat
+import java.time.Instant.now
+import java.time.LocalDateTime.now
 import java.util.*
 
 class informasi_Tambah : AppCompatActivity() {
@@ -20,9 +22,11 @@ class informasi_Tambah : AppCompatActivity() {
     private lateinit var edttittle: EditText
     private lateinit var edtisi: EditText
     private lateinit var reference: DatabaseReference
+    private lateinit var mref: DatabaseReference
     private lateinit var storage : StorageReference
     private lateinit var uri : Uri
     private var PDF: Int = 0
+    private var info = "Information"
     private var USERNAME_KEY = "username_key"
     private var username_key = ""
     private var username_key_new = ""
@@ -34,8 +38,6 @@ class informasi_Tambah : AppCompatActivity() {
         btnInput = findViewById(R.id.input)
 
         btnInput.setOnClickListener(View.OnClickListener {
-
-            //menyimpan kepada lokal storage/smartphone
 
 
             //menyimpan ke firebase database

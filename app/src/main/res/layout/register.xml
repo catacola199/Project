@@ -83,14 +83,14 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textUserName"
+                    android:id="@+id/textInputEmail"
                     style="@style/parent"
                     android:layout_marginTop="@dimen/loginViewsMargin">
                     <EditText
-                        android:id="@+id/editUserName"
+                        android:id="@+id/editTextEmail"
                         style="@style/modifiedEditText"
-                        android:hint="Username"
-                        android:inputType="textPersonName" />
+                        android:hint="@string/login_email_hint"
+                        android:inputType="textEmailAddress" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -98,11 +98,9 @@
                     style="@style/parent"
                     app:passwordToggleEnabled="true"
                     android:layout_marginTop="@dimen/loginViewsMargin">
-
                     <EditText
                         android:id="@+id/editTextPassword"
                         style="@style/modifiedEditText"
-
                         android:hint="@string/login_password_hint"
                         android:inputType="textPassword" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -167,24 +165,11 @@
                         android:inputType="phone" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textInputEmail"
-                    style="@style/parent"
-                    android:layout_marginTop="@dimen/loginViewsMargin">
-
-                    <EditText
-                        android:id="@+id/editTextEmail"
-                        style="@style/modifiedEditText"
-                        android:hint="@string/login_email_hint"
-                        android:inputType="textEmailAddress" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-
                 <Button
                     android:id="@+id/signup"
                     style="@style/loginButton"
                     android:layout_gravity="right"
-                    android:layout_marginTop="@dimen/loginViewsMargin"
+                    android:layout_marginTop="30dp"
                     android:text="Signup" />
 
 

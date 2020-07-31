@@ -27,10 +27,12 @@
         android:layout_toRightOf="@id/img_item_photo"
         android:orientation="vertical">
         <TextView
-            android:id="@+id/tv_item_name"
+            android:id="@+id/tv_item_nameS"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
+            android:ellipsize="end"
+            android:maxLines="1"
             android:textSize="16sp"
             android:textStyle="bold"
             android:text="@string/catalog_name" />
@@ -40,14 +42,14 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <TextView
-                android:id="@+id/seri"
+                android:id="@+id/seriS"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:maxLines="2"
                 android:text="seri" />
             <TextView
-                android:id="@+id/date"
+                android:id="@+id/dateS"
                 android:layout_width="70dp"
                 android:layout_marginLeft="10dp"
                 android:layout_height="wrap_content"
@@ -55,7 +57,7 @@
                 android:maxLines="2"
                 android:text="date" />
             <TextView
-                android:id="@+id/view"
+                android:id="@+id/viewS"
                 android:layout_width="70dp"
                 android:layout_marginLeft="10dp"
                 android:layout_height="wrap_content"

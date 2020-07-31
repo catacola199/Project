@@ -27,7 +27,7 @@ class Salesman_PDF_Viewer : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_salesman__p_d_f__viewer)
-        getUsernameLocal()
+
         Tittle = findViewById(R.id.Tittle)
 
         val position = intent.getStringExtra("url_pdf")
@@ -35,9 +35,6 @@ class Salesman_PDF_Viewer : AppCompatActivity() {
 
 
     }
-    fun getUsernameLocal(){
-        val sharedPreference: SharedPreferences = getSharedPreferences(USERNAME_KEY, Context.MODE_PRIVATE)
-        username_key_new = sharedPreference.getString(username_key, "").toString()
-    }
+
 
 }

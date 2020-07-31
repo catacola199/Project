@@ -71,23 +71,22 @@
                 app:layout_editor_absoluteY="125dp">
 
                 <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                    style="@style/parent"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="120dp"
-                    android:hint="Username"
+                    android:hint="Email"
                     app:hintTextAppearance="@style/TextInputLayoutHintText">
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/view_username2"
+                        android:id="@+id/view_email2"
                         android:layout_width="300dp"
-                        android:text="Del"
                         android:layout_height="60dp"
                         android:textColor="#6a8caf"
                         android:textSize="18dp" />
                 </com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                    style="@style/parent"
                     android:layout_width="300dp"
                     android:layout_height="80dp"
                     android:layout_gravity="center"
@@ -97,7 +96,6 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/view_password2"
                         android:layout_width="300dp"
-                        android:text="Del123"
                         android:textColor="#6a8caf"
                         android:inputType="textPassword"
                         android:layout_height="60dp"
@@ -105,59 +103,56 @@
                         />
                 </com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                    style="@style/parent"
                     android:layout_width="300dp"
                     android:layout_height="80dp"
                     android:layout_gravity="center"
-                    app:passwordToggleEnabled="true"
                     android:hint="Name"
                     app:hintTextAppearance="@style/TextInputLayoutHintText">
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/view_name2"
                         android:layout_width="300dp"
                         android:textColor="#6a8caf"
-                        android:text="Delviro"
                         android:inputType="text"
                         android:layout_height="60dp"
                         android:textSize="18dp"
                          />
                 </com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                    style="@style/parent"
                     android:layout_width="300dp"
                     android:layout_height="80dp"
                     android:layout_gravity="center"
-                    app:passwordToggleEnabled="true"
-                    android:hint="From"
+                    android:hint="Role (Admin/Member)"
                     app:hintTextAppearance="@style/TextInputLayoutHintText">
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/view_from2"
+                        android:id="@+id/view_Role2"
                         android:layout_width="300dp"
                         android:textColor="#6a8caf"
-                        android:text="Yogya"
                         android:inputType="text"
                         android:layout_height="60dp"
                         android:textSize="18dp"
                         />
                 </com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                    style="@style/parent"
                     android:layout_width="300dp"
                     android:layout_height="80dp"
                     android:layout_gravity="center"
-                    android:hint="Email"
+                    android:hint="From"
                     app:hintTextAppearance="@style/TextInputLayoutHintText">
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/view_email2"
+                        android:id="@+id/view_from2"
                         android:layout_width="300dp"
                         android:textColor="#6a8caf"
-                        android:text="Del@gmail.com"
+                        android:inputType="text"
                         android:layout_height="60dp"
                         android:textSize="18dp"
-                         />
+                        />
                 </com.google.android.material.textfield.TextInputLayout>
+
                 <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                    style="@style/parent"
                     android:layout_width="300dp"
                     android:layout_height="80dp"
                     android:layout_gravity="center"
@@ -167,13 +162,12 @@
                         android:id="@+id/view_Phone2"
                         android:layout_width="300dp"
                         android:layout_height="60dp"
-                        android:text="081213561966"
                         android:textColor="#6a8caf"
                         android:textSize="18dp"
                         />
                 </com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                    style="@style/parent"
                     android:layout_width="300dp"
                     android:layout_height="80dp"
                     android:layout_gravity="center"
@@ -183,7 +177,6 @@
                         android:id="@+id/view_Gender2"
                         android:layout_width="300dp"
                         android:layout_height="60dp"
-                        android:text="Male"
                         android:textSize="18dp"
                         android:textColor="#6a8caf"
                          />
