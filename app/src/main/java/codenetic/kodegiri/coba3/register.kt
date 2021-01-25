@@ -151,4 +151,7 @@ class register : AppCompatActivity() {
     private fun onAuthSuccess(user: FirebaseUser) {
 
     }
+    override fun onBackPressed(){
+        startActivity(Intent(this, MainMenu::class.java))
+    }
 }

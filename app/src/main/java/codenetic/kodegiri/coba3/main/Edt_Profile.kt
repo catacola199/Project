@@ -34,7 +34,6 @@ class Edt_Profile : AppCompatActivity() {
     private lateinit var gender : TextInputEditText
     private lateinit var email : TextInputEditText
     private lateinit var password : TextInputEditText
-    private lateinit var username : TextInputEditText
     private lateinit var Role : TextInputEditText
 
     private lateinit var btn_add_new_photo : Button
@@ -79,7 +78,6 @@ class Edt_Profile : AppCompatActivity() {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 name.setText(dataSnapshot.child("Name").value.toString())
                 phone.setText(dataSnapshot.child("Phone").value.toString())
-                username.setText(dataSnapshot.child("Username").value.toString())
                 gender.setText(dataSnapshot.child("Gender").value.toString())
                 from.setText(dataSnapshot.child("From").value.toString())
                 email.setText(dataSnapshot.child("Email").value.toString())
@@ -107,7 +105,6 @@ class Edt_Profile : AppCompatActivity() {
 
             reference.addListenerForSingleValueEvent(object: ValueEventListener{
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
-                    dataSnapshot.ref.child("Username").setValue(username.text.toString())
                     dataSnapshot.ref.child("Name").setValue(name.text.toString())
                     dataSnapshot.ref.child("Email").setValue(email.text.toString())
                     dataSnapshot.ref.child("From").setValue(from.text.toString())

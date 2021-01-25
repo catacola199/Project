@@ -32,16 +32,18 @@
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
                 android:layout_width="match_parent"
-                android:layout_height="75dp"
+                android:layout_marginTop="10dp"
+                android:layout_height="80dp"
                 android:layout_marginRight="2dp"
                 android:layout_marginLeft="2dp"
+                android:layout_marginBottom="2dp"
                 android:background="@color/white"
                 android:hint="Project Name">
                 <EditText
-                    android:layout_width="360dp"
                     android:id="@+id/project_name"
+                    android:layout_width="360dp"
                     android:layout_height="70dp"
-                    android:text="  ">
+                    android:text=" ">
                 </EditText>
             </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.textfield.TextInputLayout

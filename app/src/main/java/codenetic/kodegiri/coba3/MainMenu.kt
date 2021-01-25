@@ -72,7 +72,8 @@ class MainMenu : AppCompatActivity() {
             startActivity(intent)
         }
         cardinformation.setOnClickListener{
-
+            val intent = Intent (this, codenetic.kodegiri.coba3.main.info::class.java)
+            startActivity(intent)
         }
         cardtransaction.setOnClickListener{
             val intent = Intent (this, codenetic.kodegiri.coba3.main.transaction::class.java)
@@ -91,7 +92,9 @@ class MainMenu : AppCompatActivity() {
             startActivity(intent)
         }
         cardlogout.setOnClickListener {
-
+            val intent = Intent(this, list::class.java)
+            startActivity(intent)
+            finish()
         }
         btn_profile.setOnClickListener{
             val intent = Intent(this, codenetic.kodegiri.coba3.main.Profile::class.java)

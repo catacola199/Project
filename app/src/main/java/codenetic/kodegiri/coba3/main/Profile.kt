@@ -61,7 +61,7 @@ class Profile : AppCompatActivity() {
         gender = findViewById(R.id.view_Gender1)
         from = findViewById(R.id.view_from1)
         email = findViewById(R.id.view_email1)
-
+        Auth = FirebaseAuth.getInstance()
         btn_logout.setOnClickListener({
             Auth.signOut()
             val intent_signout = Intent(this, MainActivity::class.java)
